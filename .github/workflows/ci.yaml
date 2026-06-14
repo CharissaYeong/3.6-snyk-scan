@@ -59,12 +59,12 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-      - name: Snyk Code Test (SAST)
+      - name: Snyk Code Test (SAST - Scans lambda_function.py)
         run: snyk code test --severity-threshold=high
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-      - name: Snyk Infrastructure as Code Test (IaC)
+      - name: Snyk Infrastructure as Code Test (IaC - Scans Terraform)
         run: snyk iac test --severity-threshold=high
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
