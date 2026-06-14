@@ -29,6 +29,9 @@ jobs:
       - name: Terraform fmt
         run: terraform fmt -check
 
+      - name: Initialize Terraform (Modules Only)
+        run: terraform init -backend=false
+
       - name: Terraform Validate
         run: terraform validate -no-color
 
